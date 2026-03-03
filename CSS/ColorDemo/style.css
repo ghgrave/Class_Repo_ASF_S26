@@ -1,0 +1,57 @@
+:root {
+    --bg: #241e4e;  /* Dark Amethyst for backgrounds*/
+    --errors: #960200; /* Oxblood  errors and call outs*/
+    --text: #ce6c47; /* Burnt Peach used for text*/
+    --highlights-for-notes: #ffd046; /*Pollen - used for notes */
+    --shadows: #eadaa2; /* Custard - shadows*/
+}
+
+body {
+    background-color: var(--text);
+}
+
+.fa-dumpster {
+    color: green;
+    font-size: 40px;
+    text-shadow: 5px 5px 0 white;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px white;
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
+    /*width: 100px;*/
+    color: blue;
+}
+
+h1:hover {
+    background-color: green;
+}
+
+button:hover {
+    background-color: var(--errors);
+}
+
+div {
+    width: 300px;
+    height: 300px;
+    background-color: var(--errors);
+    box-shadow: 1px 3px 5px black;
+}
+
+input:focus {
+    padding: 25px;
+    background-color: red;
+}
+
+input::placeholder {
+    color: red;
+}
+
+span {
+    color: inherit;
+}
+
+h1 {
+    margin-left: -1000px;
+}
