@@ -1,37 +1,29 @@
 import {useState} from "react";
 import "./App.css"
+import {displayMessage, randomNumber} from "./Utils/helpers.jsx";
 
 const App = () => {
   const [number, setNumber] = useState(0)
+    const [isWinner, setIsWinner]  = useState(false)
   let testWinningNumber = 7;
 
-  const  handleClick =()  => {
-    console.log("You clicked")
-  //   generate a random number (1-10)
-    let result = Math.floor(Math.random()*10+1)
-    console.log("result:", result)
-    setNumber(result)
-  }
 
-  const displayMessage = () =>{
-    // if(testWinningNumber === 7){
-    if(number === 7){
-      return <h1>You win!!!!</h1>
-    } else {
-      return (
-          <button onClick={handleClick}>Click Me to Win!!!</button>
-      )
-    }
+  const  handleClick =()  => {
+  //   generate a random number (1-10)
+    let result = randomNumber()
+    console.log("result:", result)
+        setNumber(result)
+      setIsWinner(number === 7 )
   }
 
   return (
       <>
         <h1>Casino Clicker</h1>
         <p>Your current number is: {number}</p>
-        {displayMessage()}
+        {/*{displayMessage(number, handleClick)}*/}
+          {isWinner ? <h2>Winner</h2> :  <button onClick={handleClick}>Click Me to Win!!!</button>}
       </>
       )
-
 }
 
 export default App;
